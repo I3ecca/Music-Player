@@ -9,7 +9,7 @@ const progressContainer = document.getElementById("progress-container");
 const title = document.getElementById("title");
 const cover = document.getElementById("cover");
 
-//song titles note i did uppercase easch song title and it still works when we are lookinh for src
+//song titles note i did uppercase easch song title and it still works when we are looking for src
 const songs = ["Hey", "Summer", "Ukulele"];
 
 //keep track of song
@@ -65,10 +65,18 @@ function nextSong(){
 
 //update progress bar
 function updateProgress(event){
-    const {duration, currentTime} = event.srcElement;
-    const progressPercent = (currentTime /duration) *100;
+    const {duration, currentTime} = event.target;
+    // const duration = event.target.duration;
+    // const currentTime = event.target.currentTime;
+    let test = event.target;
+    console.log(test.duration);
+    console.log(duration, currentTime);
+   
+    const progressPercent = (currentTime /duration) * 100;
     
     progress.style.width = `${progressPercent}%`;
+
+    // console.log(progressPercent, duration);
 }
 
 //set progress bar
@@ -76,7 +84,7 @@ function setProgress(event){
     const width = this.clientWidth;
     const clickX = event.offsetX;
     const duration = audio.duration;
-    audio.currentTime = (clickX /width) *duration;
+    audio.currentTime = (clickX /width) * duration;
 }
 
 
