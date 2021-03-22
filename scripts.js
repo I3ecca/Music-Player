@@ -9,8 +9,8 @@ const progressContainer = document.getElementById("progress-container");
 const title = document.getElementById("title");
 const cover = document.getElementById("cover");
 
-//song titles
-const songs = ["hey", "summer", "ukulele"];
+//song titles note i did uppercase easch song title and it still works when we are lookinh for src
+const songs = ["Hey", "Summer", "Ukulele"];
 
 //keep track of song
 let songIndex = 2;
